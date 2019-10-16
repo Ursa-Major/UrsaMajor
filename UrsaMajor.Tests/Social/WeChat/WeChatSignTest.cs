@@ -21,37 +21,11 @@ namespace UrsaMajor.Tests.Social.WeChat
             objSign.add("out_trade_no", "M2401C1234560258");
             objSign.add("type", null);
             objSign.add("body", "优惠码");
+            objSign.add("attach", String.Empty);
 
             string signed = objSign.calc();
-            Assert.IsNotNull(signed);
-        }
-
-        [TestMethod]
-        public async Task RemoteTest()
-        {
-            var dictArgs = new Dictionary<string, string>();
-            dictArgs.Add("mchid", "1534793921");
-            dictArgs.Add("total_fee", "1");
-            dictArgs.Add("out_trade_no", "M1234C123456790");
-            dictArgs.Add("type", String.Empty);
-            dictArgs.Add("body", "优惠码");
-            dictArgs.Add("attach", "MARK001");
-
-            const string key = "8JGf15JuTWEyUa57";
-            var objSign = new WeChatSign(key);
-            foreach (var x in dictArgs) {
-                objSign.add(x.Key, x.Value);
-            }
-            string sign = objSign.calc();
-            dictArgs.Add("sign", sign);
-            FormUrlEncodedContent body = new FormUrlEncodedContent(dictArgs);
-            
-            HttpClient httpClient = new HttpClient();
-            var post = await httpClient.PostAsync("https://payjs.cn/api/native", body);
-            var data = await post.Content.ReadAsStringAsync();
-
-            Assert.IsNotNull(data);
-
+            string expected = "3FC302E58E6A1DEE8D2505BCE325D20B";
+            Assert.AreEqual(expected, signed);
         }
     }
 }
