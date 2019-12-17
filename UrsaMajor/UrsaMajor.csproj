@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>AceBear</Authors>
+    <RepositoryUrl>https://github.com/Ursa-Major/UrsaMajor.git</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1.1</Version>
+    <PackageIconUrl>https://github.com/Ursa-Major/UrsaMajor/raw/master/UrsaMajor/res/UrsaMajor.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/Ursa-Major/UrsaMajor</PackageProjectUrl>
+    <PackageTags>WeChat</PackageTags>
+    <Description>A collection of small functions: WeChat API sign</Description>
   </PropertyGroup>
 
 </Project>
